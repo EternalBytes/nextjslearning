@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono, Roboto } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/layout/header";
+import Footer from "@/components/layout/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +28,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${robotoSans.variable} antialiased`} >
-        {children}
+        <Header />
+          <main className="flex flex-col items-center p-8 gap-16 sm:p-20 min-h-screen font-[family-name:var(--font-roboto-sans)] mx-24">
+            {children}
+          </main>
+        <Footer />
       </body>
     </html>
   );
